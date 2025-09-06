@@ -11,12 +11,6 @@
 *.gch
 *.pch
 
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
 # Compiled Dynamic libraries
 *.so
 *.dylib
@@ -37,5 +31,25 @@
 *.out
 *.app
 
-# debug information files
+# Debug files
+*.ilk
+*.pdb
 *.dwo
+
+# ========================
+# CLion / JetBrains
+# ========================
+.idea/
+cmake-build-*/
+
+# ========================
+# CMake
+# ========================
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+
