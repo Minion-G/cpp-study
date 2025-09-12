@@ -39,6 +39,7 @@ int main() {
 
     std::cout << "listening on 0.0.0.0:31300\n";
     bool run = 1;
+    std::vector<char>buf(1024);
     while (run){
         sockaddr_in cli{};
         socklen_t len = sizeof(cli);
@@ -47,9 +48,8 @@ int main() {
             perror("accept");
             continue;
         }
-
         for(;;){
-            std::vector<char>buf(1024);
+
             ssize_t n = recv(fd, buf.data(), buf.size(), 0);
             if(n > 0){
                 ssize_t sent = send(fd, buf.data(), (size_t)n, 0);
